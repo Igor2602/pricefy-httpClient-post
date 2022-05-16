@@ -1,0 +1,94 @@
+<div class="container py-4">
+  <div class="card list-post">
+    <h5 class="card-header">Lista de posts</h5>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Conteudo</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of posts">
+              <td>{{post.id}}</td>
+              <td>{{post.title}}</td>
+              <td>{{post.content}}</td>
+              <td class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-warning btn-sm"
+                  (click)="editPost(post)"
+                >
+                  Editar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm ml-1"
+                  (click)="deletePost(post)"
+                >
+                  Deletar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div class="card add-post mt-2">
+    <h5 class="card-header">Adicionar/Atualizar post</h5>
+    <div class="card-body">
+        <form
+          id="add-form"
+          (ngSubmit)="f.form.valid && savePost(f)"
+          #f="ngForm"
+          novalidate
+        >
+          <div class="form-group">
+              <label for="model">Titulo</label>
+              <input
+                type="text"
+                [(ngModel)]="post.title"
+                id="title"
+                name="title"
+                #title="ngModel"
+                required
+                class="form-control"
+                [ngClass]="{ 'is-invalid': f.submitted }"
+                placeholder="Digite o titulo"
+              >
+          </div>
+          <div class="form-group">
+              <label for="color">Conteudo</label>
+              <input
+                type="text"
+                [(ngModel)]="post.content"
+                id="content"
+                name="content"
+                #content="ngModel"
+                required
+                class="form-control"
+                [ngClass]="{ 'is-invalid': f.submitted }"
+                placeholder="Digite o conteudo"
+              >
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary btn-add-car mr-2"
+          >
+            Salvar
+          </button>
+          <button
+            type="reset"
+            class="btn btn-secondary btn-add-car"
+            (click)="cleanForm(f)"
+          > 
+            Cancelar
+          </button>
+        </form>
+    </div>
+  </div>
+</div>
