@@ -1,3 +1,7 @@
+# Consumo de API REST com HttpClient
+
+Este é p código fonte complementar para os exemplos que usei no artigo "Consumo de API REST com HttpClient" postado no [Pricefy Labs](https://medium.com/pricefy-labs) no Medium
+
 # ConsumoApiRest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.

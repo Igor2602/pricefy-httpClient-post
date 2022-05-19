@@ -63,7 +63,7 @@
           </div>
           <div class="form-group">
               <label for="color">Conteudo</label>
-              <input
+              <textarea
                 type="text"
                 [(ngModel)]="post.content"
                 id="content"
@@ -73,7 +73,7 @@
                 class="form-control"
                 [ngClass]="{ 'is-invalid': f.submitted }"
                 placeholder="Digite o conteudo"
-              >
+              ></textarea>
           </div>
           <button
             type="submit"
