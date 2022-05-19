@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.getPosts();
   }
 
-  // Chama o serviço para obtém todos os carros
+  // Chama o serviço para obter todos os carros
   getPosts() {
     this.postService.getPosts().subscribe((posts: Post[]) => {
       this.posts = posts;
