@@ -22,14 +22,14 @@ export class AppComponent implements OnInit {
     this.getPosts();
   }
 
-  // Chama o serviço para obter todos os carros
+  // Chama o serviço para obter todos os posts
   getPosts() {
     this.postService.getPosts().subscribe((posts: Post[]) => {
       this.posts = posts;
     });
   }
 
-  // define se um carro será criado ou atualizado
+  // define se um post será criado ou atualizado
   savePost(form: NgForm) {
     if (this.post.id !== undefined) {
       this.postService.updatePost(this.post).subscribe(() => {
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // deleta um carro
+  // deleta um post
   deletePost(car: Post) {
     this.postService.deletePost(car).subscribe(() => {
       this.getPosts();
